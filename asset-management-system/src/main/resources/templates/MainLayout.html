@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+
+  <th:block th:replace="~{fragment/Meta}"></th:block>
+  <title layout:title-pattern="$CONTENT_TITLE - $LAYOUT_TITLE" th:text="#{system.full.name}"></title>
+  <th:block th:replace="~{fragment/Style}"></th:block>
+  <link href="https://fonts.googleapis.com/css?family=Content|Moul|Titillium+Web" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+  <style>
+	.header {
+		background: #28c76f!important;
+	 }
+	 .header .mobile-user-menu a {
+	   color: #fff;
+	   padding: 0;
+	 }
+	 .page-title span{
+		font-family: "Content", Titillium Web;
+		font-size: 16px; font-weight: 400;
+		color: #1b2850;
+	 }
+	 .page-title p{
+ 		font-family: "Content", Titillium Web;
+ 		font-size: 15px; font-weight: 400;
+ 		color: #1b2850;
+		padding-top: 10px;;
+ 	 }
+	.page-title span b{
+		font-family: "Content", Titillium Web;
+		font-size: 16px; font-weight: 600;
+		color: #1b2850;
+	}
+	.sidebar .sidebar-menu > ul > li > a span {
+		font-family: "Content", Titillium Web;
+		font-size: 16px; font-weight: 600;
+		color: #1b2850;
+	}
+	.header span {
+		font-family: "Content", Titillium Web;
+		font-size: 13px; font-weight: 100;
+		color: #1b2850;
+	}
+	.sidebar .sidebar-menu>ul>li.submenu ul li a{
+		font-family: "Content", Titillium Web;
+		font-size: 15px; font-weight: 400;
+		color: #1b2850;
+	}
+	
+	@media (min-width: 991px) {
+	    #toggle_btn:before {
+	        content: "";
+	        width: 18px;
+	        height: 18px;
+	        border: 2px solid #ffffff;
+	        border-radius: 20px;
+	    }
+	}
+	
+	.header-left.active #toggle_btn:after {
+	    content: "";
+	    width: 6px;
+	    height: 6px;
+	    background-color: #fff;
+	    border: 2px solid #fff;
+	    border-radius: 20px;
+	    position: absolute;
+	    top: 6px;
+	    left: 6px;
+	}
+	.sidebar .sidebar-menu>ul>li.submenu ul {
+	    background: #ffffff;
+	    border-radius: 5px;
+	    padding: 10px 0;
+	}
+	.bar-icon span {
+	  background-color: #fff;
+	  display: block;
+	  float: left;
+	  height: 3px;
+	  margin-bottom: 7px;
+	  width: 31px;
+	  border-radius: 2px;
+	  transition: all .5s;
+	}
+	.sidebar .sidebar-menu > ul > li.active a {
+	  background: #1b285005;
+	  border-radius: 5px;
+	}
+	.sidebar .sidebar-menu > ul > li.active a span {
+	  color: #1b2850;
+	}
+	.sidebar .sidebar-menu > ul > li > a:hover {
+	  background: #1b285005;
+	  color: #fff;
+	  border-radius: 5px;
+	}
+	.sidebar .sidebar-menu > ul > li > a:hover span {
+	  color: #1b2850;
+	}
+	.sidebar .sidebar-menu > ul > li.active a img {
+	  filter: brightness(0) invert(0);  margin-top: -2px!important;
+	}  
+	.sidebar .sidebar-menu > ul > li:hover a img {
+	  filter: brightness(0) invert(0);  margin-top: -2px!important;
+	}
+	.sidebar .sidebar-menu > ul > li > a img {
+	  width: 18px;
+	  margin-top: -2px;
+	}
+	.sidebar .sidebar-menu > ul > li.submenu ul li a:hover {
+      background: #1b285005;
+	  color: #1b2850;
+	  border-radius: 5px;
+	}
+    .sidebar .sidebar-menu > ul > li.submenu ul li a:active {
+      background: #1b285005;
+	  color: #1b2850;
+      border-radius: 5px;
+    }
+	.sidebar .sidebar-menu>ul>li.submenu ul li a:hover:after {
+	    background: #1b285005;
+	    border: 1px solid #1b285005;
+	}
+	.user-menu.nav>li>a.dropdown-toggle.nav-link.show {
+	    background: rgba(145, 158, 171, .32);
+	}
+	.sidebar .sidebar-menu > ul > li.submenu ul li a:hover::after {
+	  background: #b6b9c0;
+	  border: none;
+	}
+	/*===========================*/
+	.page-header .btn-added {
+	  font-family: "Content", Titillium Web;
+	  background: #28c76f;
+	  padding: 7px 15px;
+	  color: #fff;
+	  font-size: 14px;
+	  font-weight: 600;
+	}
+	.search-set .btn-filter {
+	  background: #28c76f;
+	  width: 34px;
+	  height: 34px;
+	  padding: 0;
+	  margin-right: 10px;
+	}
+	.search-set .btn-filter.setclose {
+	  background: #28c76f;
+	}
+	.form-group .btn-filters {
+	  background: #28c76f;
+	  color: #fff;
+	  width: 40px;
+	  height: 40px;
+	  padding: 0;
+	}
+	.select2-container--default .select2-results__option--highlighted[aria-selected] {
+	  background: #28c76f;
+	  color: #fff;
+	}
+	.pagination li.active a.page-link {
+	  background: #28c76f;
+	  border-color: #28c76f;
+	  border-radius: 5px;
+	}  
+	.select2-container--focus .select2-selection--single {
+	    background: #fff !important;
+	    border-color: #28c76f;
+    }	
+	.pagination li a:hover {
+	  background: #28c76f;
+	  color: #fff;
+	}
+	
+	.user-menu.nav > li.flag-nav a.img_active img {
+	  width: 35px!important;;
+	  height: 20px!important;;
+	  margin-right: 5px!important;;
+	  margin-top: 25px!important;;
+	}
+	.user-menu.nav > li.flag-nav a.img_likh img {
+	  width: 30px!important;
+	  height: 18px!important;;
+	  margin-right: 5px!important;;
+	}  
+	.user-menu.nav > li.flag-nav a img {
+  	  width: 28px!important;
+  	  height: 18px!important;;
+  	  margin-right: 5px!important;;
+  	}
+	.user-menu.nav > li > a.dropdown-toggle.nav-link.show {
+	  background: rgba(145, 158, 171, .32);
+	  padding-right: 10px;
+	  padding-left: 20px;
+	}
+	.user-menu.nav > li > a.dropdown-toggle.nav-link {
+	  padding-right: 10px;
+	  padding-left: 20px;
+	}
+  </style>
+</head>
+<body>	
+	<!--<div id="global-loader">
+		<div class="whirly-loader"> </div>
+	</div>-->	
+	<div class="main-wrapper">
+		<div th:replace="~{fragment/Header}"></div>
+		<div th:replace="~{fragment/Sidebar}"></div>
+		<div layout:fragment="content">
+	        <!--
+	          Child layout will render here!
+	         -->
+		</div>		
+	</div>
+
+    <!-- Scripts -->
+	<th:block th:replace="~{fragment/Script}"></th:block>
+	<th:block layout:fragment="scripts">
+	  <!--
+	    Child script will render here!
+	  -->
+	</th:block>
+</body>
+</html>

@@ -1,0 +1,43 @@
+version: '3.8'
+name: gdnt_asset_management
+services:
+  db:
+    image: mysql:latest
+    container_name: gdnt_ams_mysql_db
+    # restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: AA@@11bb22cc33
+      MYSQL_DATABASE: gdnt_dev
+      MYSQL_USER: gdnt
+      MYSQL_PASSWORD: AA@@11bb22cc33
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - app_network
+
+  app:
+    container_name: gdnt_ams_app
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    image: gdnt_ams_app:1.0.4
+    ports:
+      - "8080:8080"
+    environment:
+      MYSQL_ROOT_PASSWORD: AA@@11bb22cc33
+      MYSQL_DATABASE: gdnt_dev
+      MYSQL_USER: root
+      MYSQL_PASSWORD: AA@@11bb22cc33
+    depends_on:
+      - db
+    networks:
+      - app_network
+
+networks:
+  app_network:
+    driver: bridge
+    
+volumes:
+    db_data:
