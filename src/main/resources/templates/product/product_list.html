@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security" layout:decorate="~{main_layout}">
+
+<head>
+	<title th:text="#{menu.product.list}"></title>
+	<style>
+		#myInput {
+		  padding: 20px;
+		  margin-top: -6px;
+		  border: 0;
+		  border-radius: 0;
+		  background: #f1f1f1;
+		}
+		.btn-light, .btn-light:hover {
+		  color: #212529;
+		  background-color: #fff;
+		  border-color: #fff;
+		}
+		.dropdown-menu[x-placement^="top"] {
+		  top: 38px !important;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="content-page" layout:fragment="content">
+
+		<div class="content">
+
+			<!-- Start Content-->
+			<div class="container-fluid">
+
+				<!-- start page title -->
+				<div class="row">
+					<div class="col-12">
+						<div class="page-title-box">
+							<h4 class="page-title font" th:text="#{menu.product.list}"></h4>
+							<div class="page-title-right">
+								<ol class="breadcrumb p-0 m-0">
+									<li class="breadcrumb-item font"><a href="#" th:text="#{system.name}"></a></li>
+									<li class="breadcrumb-item active font" th:text="#{menu.product.list}"></li>
+								</ol>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+					</div>
+				</div>
+				<!-- end page title -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card card-border card-success">
+                            <div class="card-header border-success bg-transparent pb-0">
+                                <h3 class="card-title text-primary"></h3>
+                            </div>							
+                            <div class="card-body">
+                                <div class="table-rep-plugin">						
+												
+                                    <div class="table-responsive mb-0" data-pattern="priority-columns">	 
+										
+										<div class="btn-group mt-1 mb-2 mr-1">		
+											<i class="fas fa-filter"></i>
+                                        </div>                                
+										    
+                                        <div class="btn-group mt-1 mb-2">											
+                                            <button type="button" class="btn btn-light dropdown-toggle waves-effect waves-light font_small_kh" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                ឈ្មោះ
+                                                <i class="mdi mdi-chevron-down"></i>
+                                            </button>
+                                            <ul class="dropdown-menu mt-10 z-1">
+                                                <li><a href="#" class="dropdown-item">Action</a></li>
+                                                <li><a href="#" class="dropdown-item">Another action</a></li>
+                                                <li><a href="#" class="dropdown-item">Something else here</a></li>
+                                                <li class="dropdown-divider"></li>
+                                                <li><a href="#" class="dropdown-item">Separated link</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="btn-group mt-1 mb-2 z-1">
+                                            <button type="button" class="btn btn-light dropdown-toggle waves-effect waves-light font_small_kh" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                ប្រភេទ
+                                                <i class="mdi mdi-chevron-down"></i>
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="#" class="dropdown-item">Action</a></li>
+                                                <li><a href="#" class="dropdown-item">Another action</a></li>
+                                                <li><a href="#" class="dropdown-item">Something else here</a></li>
+                                                <li class="dropdown-divider"></li>
+                                                <li><a href="#" class="dropdown-item">Separated link</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="btn-group mt-1 mb-2">
+                                            <button type="button" class="btn btn-light dropdown-toggle waves-effect waves-light font_small_kh" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                បរិមាណ
+                                                <i class="mdi mdi-chevron-down"></i>
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="#" class="dropdown-item">Action</a></li>
+                                                <li><a href="#" class="dropdown-item">Another action</a></li>
+                                                <li><a href="#" class="dropdown-item">Something else here</a></li>
+                                                <li class="dropdown-divider"></li>
+                                                <li><a href="#" class="dropdown-item">Separated link</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="btn-group mt-1 mb-2">
+                                            <button type="button" class="btn btn-light dropdown-toggle waves-effect waves-light" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                តម្លៃ
+                                                <i class="mdi mdi-chevron-down"></i>
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="#" class="dropdown-item">Action</a></li>
+                                                <li><a href="#" class="dropdown-item">Another action</a></li>
+                                                <li><a href="#" class="dropdown-item">Something else here</a></li>
+                                                <li class="dropdown-divider"></li>
+                                                <li><a href="#" class="dropdown-item">Separated link</a></li>
+                                            </ul>
+                                        </div>
+										
+                                        <table id="tech-companies-1" class="table table-small-font table-bordered table-striped">
+                                            <thead>
+                                                <tr class="text-white bg-primary">
+                                                    <!--<th>No</th>-->
+                                                    <th data-priority="1">ឈ្មោះ</th>
+                                                    <th data-priority="3">កាលបរិច្ឆែទទទួល</th>
+                                                    <th data-priority="1">ប្រភេទ</th>
+                                                    <th data-priority="3">ប្រភព</th>
+                                                    <th data-priority="3">បរិមាណ</th>
+                                                    <th data-priority="6">នៅសល់</th>
+                                                    <th data-priority="6">រូបិយបណ្ណ</th>
+                                                    <th data-priority="6">តម្លៃ</th>
+                                                    <th data-priority="6">រូបភាព</th>
+                                                    <th data-priority="6">ដំណើរការ</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>                                                
+                                                <tr>
+                                                    <td>15.81</td>
+                                                    <td>12:25PM</td>
+                                                    <td>0.11 (0.67%)</td>
+                                                    <td>15.70</td>
+                                                    <td>15.94</td>
+                                                    <td>15.79 x 6100</td>
+                                                    <td>15.80 x 17000</td>
+                                                    <td>18.16</td>
+                                                    <td>Non-spanning</td>
+                                                    <td>Non-spanning</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+									<ul class="pagination pagination-md mb-0 mt-2" style="float: right;">
+                                        <li class="page-item">
+                                            <a class="page-link" href="#" aria-label="Previous">
+                                                <i class="fas fa-angle-double-left"></i>												 
+                                            </a>
+                                        </li>
+                                        <li class="page-item">									
+											<a class="page-link" href="#" aria-label="Previous">
+                                                <i class="fa fa-angle-left"></i>
+                                            </a>
+										</li>
+                                        <li class="page-item">
+                                            <a class="page-link" href="#" aria-label="Next">
+                                                <i class="fa fa-angle-right"></i>
+                                            </a>
+                                        </li>
+										<li class="page-item">
+										    <a class="page-link" href="#" aria-label="Previous">
+										        <i class="fas fa-angle-double-right"></i>												 
+										    </a>
+										</li>
+                                    </ul>
+									<span class="pagination pagination-md mb-0 mt-2 pt-2" style="float: left;">បង្ហាញ 1 ទៅ 10 នៃ 10 កំណត់ត្រាទាំងអស់</span>									
+                                </div>                            
+							</div>			
+										
+							<!-- Form Input -->
+							<div id="con-close-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+                                <div class="modal-dialog modal-lg">
+                                    <div class="modal-content">
+                                        <div class="modal-header bg-success">
+                                                <h5 class="modal-title text-white">បន្ថែម សម្ភារ</h5>
+                                            <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="row">
+                                                <div class="col-lg-4">
+                                                    <div class="form-group">
+                                                        <label for="field-1" class="control-label">ឈ្មោះ</label>
+                                                        <input type="text" class="form-control" id="field-1" placeholder="John">
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-4">
+                                                    <div class="form-group">
+                                                        <label for="field-2" class="control-label">បរិមាណ</label>
+                                                        <input type="text" class="form-control" id="field-2" placeholder="Doe">
+                                                    </div>
+                                                </div>
+												<div class="col-lg-4">
+                                                   <div class="form-group">
+                                                       <label for="field-3" class="control-label">រូបិយប័ណ្ណ</label>
+                                                       <input type="text" class="form-control" id="field-3" placeholder="Address">
+                                                   </div>
+                                               </div>
+                                            </div>
+										    <div class="row">
+										       <div class="col-lg-4">
+										           <div class="form-group">
+										               <label for="field-1" class="control-label">អត្រាប្ដូរប្រាក់</label>
+										               <input type="text" class="form-control" id="field-1" placeholder="John">
+										           </div>
+										       </div>
+										       <div class="col-lg-4">
+										           <div class="form-group">
+										               <label for="field-2" class="control-label">តម្លៃ</label>
+										               <input type="text" class="form-control" id="field-2" placeholder="Doe">
+										           </div>
+										        </div>
+											   	<div class="col-lg-4">
+											          <div class="form-group">
+											              <label for="field-3" class="control-label">ប្រភេទ</label>
+											              <input type="text" class="form-control" id="field-3" placeholder="Address">
+											          </div>
+											      </div>
+											   </div>
+											  <div class="row">
+											      <div class="col-lg-4">
+											          <div class="form-group">
+											              <label for="field-1" class="control-label">ស្ថានភាព</label>
+											              <input type="text" class="form-control" id="field-1" placeholder="John">
+											          </div>
+											      </div>
+											      <div class="col-lg-4">
+											          <div class="form-group">
+											              <label for="field-2" class="control-label">ក្រុមហ៊ុនផលិត</label>
+											              <input type="text" class="form-control" id="field-2" placeholder="Doe">
+											          </div>
+											      </div>
+											  	<div class="col-lg-4">
+											         <div class="form-group">
+											             <label for="field-3" class="control-label">ប្រទេសផលិត</label>
+											             <input type="text" class="form-control" id="field-3" placeholder="Address">
+											         </div>
+											     </div>
+											  </div>
+											 <div class="row">
+											     <div class="col-lg-4">
+											         <div class="form-group">
+											             <label for="field-1" class="control-label">កាលបរិច្ឆេទទទួល</label>
+											             <input type="text" class="form-control" id="field-1" placeholder="John">
+											         </div>
+											     </div>
+											     <div class="col-lg-4">
+											         <div class="form-group">
+											             <label for="field-2" class="control-label">ប្រភព</label>
+											             <input type="text" class="form-control" id="field-2" placeholder="Doe">
+											         </div>
+											     </div>
+											 	<div class="col-lg-4">
+											        <div class="form-group">
+											            <label for="field-3" class="control-label">អ្នកផ្គត់ផ្គង់</label>
+											            <input type="text" class="form-control" id="field-3" placeholder="Address">
+											        </div>
+											    </div>
+											 </div>
+											<div class="row">
+											    <div class="col-lg-4">
+											        <div class="form-group">
+											            <label for="field-1" class="control-label">Fund</label>
+											            <input type="text" class="form-control" id="field-1" placeholder="John">
+											        </div>
+											    </div>
+											    <div class="col-lg-4">
+											        <div class="form-group">
+											            <label for="field-2" class="control-label">Reference No</label>
+											            <input type="text" class="form-control" id="field-2" placeholder="Doe">
+											        </div>
+											    </div>
+												<div class="col-lg-4">
+											       <div class="form-group">
+											           <label for="field-3" class="control-label">Contact No</label>
+											           <input type="text" class="form-control" id="field-3" placeholder="Address">
+											       </div>
+											   </div>
+											</div>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="form-group no-margin">
+                                                        <label for="field-7" class="control-label">ចំណាំ</label>
+                                                        <textarea class="form-control autogrow" id="field-7" placeholder="Write something about the products" style="overflow: hidden; word-wrap: break-word; resize: horizontal; height: 104px;"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary waves-effect" data-dismiss="modal">បោះបង់</button>
+                                            <button type="button" class="btn btn-primary waves-effect waves-light">រក្សាទុក</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><!-- /.modal -->							
+							
+                        </div>
+                    </div>
+                </div>
+                <!-- end row -->
+				
+            </div>
+            <!-- end container-fluid -->
+
+		</div>
+		<!-- end content -->
+	
+	</div>
+
+	<th:block layout:fragment="scripts">		
+		<script>						  
+			$(document).ready(function() {	
+				$(".btn-group.dropdown-btn-group.pull-right").find(".btn.btn-default").first().after('<button type="button" class="btn btn-default">Excel</button>');
+				$(".btn-group.dropdown-btn-group.pull-right").find(".btn.btn-default").first().prop("hidden",true);
+				$(".btn-group.dropdown-btn-group.pull-right").find(".btn.btn-default.dropdown-toggle").text("ភាពមើលឃើញជួរឈរ");
+				var addNewButton = '<button type="button" class="btn btn-primary btn_add_new"  data-toggle="modal" data-target="#con-close-modal"><span class="fa fa-plus"></span>  បន្ថែម សម្ភារ</button>';
+				$(".focus-btn-group").html(addNewButton);
+			});
+		</script>
+	</th:block>
+</body>
+
+</html>
